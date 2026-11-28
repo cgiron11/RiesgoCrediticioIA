@@ -1,0 +1,260 @@
+{
+  "fecha_entrenamiento": "2026-11-25T06:38:49+00:00",
+  "dataset": "train.csv",
+  "n_muestras": 83318,
+  "n_train": 66654,
+  "n_test": 16664,
+  "outliers_eliminados_iqr": 16682,
+  "caracteristicas_ordenadas": [
+    "Credit_Utilization_Ratio",
+    "Outstanding_Debt",
+    "Interest_Rate",
+    "Num_Credit_Inquiries",
+    "Delay_from_due_date",
+    "Credit_Mix",
+    "Payment_of_Min_Amount",
+    "Credit_History_Age",
+    "Num_of_Delayed_Payment",
+    "Monthly_Inhand_Salary"
+  ],
+  "caracteristicas": [
+    {
+      "nombre": "Credit_Utilization_Ratio",
+      "orden": 1,
+      "tipo": "numerica",
+      "descripcion": "Porcentaje de uso del credito respecto al limite disponible (0-100)",
+      "min": 20.1008,
+      "media": 32.2089,
+      "max": 48.247,
+      "importancia": 0.1139,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": 15.386421821250002,
+        "max": 49.162807791249996
+      }
+    },
+    {
+      "nombre": "Outstanding_Debt",
+      "orden": 2,
+      "tipo": "numerica",
+      "descripcion": "Deuda pendiente total del solicitante en USD",
+      "min": 0.23,
+      "media": 1235.1031,
+      "max": 4014.35,
+      "importancia": 0.2391,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -1503.7625,
+        "max": 4015.7975
+      }
+    },
+    {
+      "nombre": "Interest_Rate",
+      "orden": 3,
+      "tipo": "numerica",
+      "descripcion": "Tasa de interes promedio (%) que paga el solicitante",
+      "min": 1.0,
+      "media": 13.8504,
+      "max": 34.0,
+      "importancia": 0.1008,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -10.0,
+        "max": 38.0
+      }
+    },
+    {
+      "nombre": "Num_Credit_Inquiries",
+      "orden": 4,
+      "tipo": "numerica",
+      "descripcion": "Numero de consultas de credito en su historial reciente",
+      "min": 0.0,
+      "media": 5.5103,
+      "max": 17.0,
+      "importancia": 0.0483,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -6.0,
+        "max": 18.0
+      }
+    },
+    {
+      "nombre": "Delay_from_due_date",
+      "orden": 5,
+      "tipo": "numerica",
+      "descripcion": "Dias promedio de retraso respecto a la fecha de vencimiento",
+      "min": -5.0,
+      "media": 19.067,
+      "max": 55.0,
+      "importancia": 0.08,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -17.0,
+        "max": 55.0
+      }
+    },
+    {
+      "nombre": "Credit_Mix",
+      "orden": 6,
+      "tipo": "categorica_ordinal",
+      "descripcion": "Diversidad de tipos de credito que maneja (Bad / Standard / Good)",
+      "min": 0.0,
+      "media": 1.1042,
+      "max": 2.0,
+      "importancia": 0.0944,
+      "codificacion": "ordinal ['Bad', 'Standard', 'Good']",
+      "categorias": {
+        "Bad": 12062,
+        "Standard": 50509,
+        "Good": 20747
+      }
+    },
+    {
+      "nombre": "Payment_of_Min_Amount",
+      "orden": 7,
+      "tipo": "categorica_ordinal",
+      "descripcion": "Si paga solo el minimo de sus cuentas: Yes = solo paga el minimo, No = paga mas del minimo, NM = no mencionado",
+      "min": 0.0,
+      "media": 1.1349,
+      "max": 2.0,
+      "importancia": 0.0108,
+      "codificacion": "ordinal ['No', 'NM', 'Yes']",
+      "categorias": {
+        "No": 31068,
+        "NM": 9943,
+        "Yes": 42307
+      }
+    },
+    {
+      "nombre": "Credit_History_Age",
+      "orden": 8,
+      "tipo": "numerica",
+      "descripcion": "Antiguedad del historial de credito en meses",
+      "min": 1.0,
+      "media": 228.4225,
+      "max": 404.0,
+      "importancia": 0.1404,
+      "codificacion": "ninguna",
+      "unidad": "meses",
+      "limites_iqr": {
+        "min": -53.0,
+        "max": 499.0
+      }
+    },
+    {
+      "nombre": "Num_of_Delayed_Payment",
+      "orden": 9,
+      "tipo": "numerica",
+      "descripcion": "Numero de pagos atrasados registrados",
+      "min": -3.0,
+      "media": 13.0293,
+      "max": 28.0,
+      "importancia": 0.0782,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -4.5,
+        "max": 31.5
+      }
+    },
+    {
+      "nombre": "Monthly_Inhand_Salary",
+      "orden": 10,
+      "tipo": "numerica",
+      "descripcion": "Salario mensual neto percibido en USD",
+      "min": 303.6454,
+      "media": 3727.4074,
+      "max": 10739.3667,
+      "importancia": 0.0941,
+      "codificacion": "ninguna",
+      "limites_iqr": {
+        "min": -3577.077083125,
+        "max": 10740.686249875
+      }
+    }
+  ],
+  "modelo_ganador": "DecisionTreeClassifier",
+  "origen_importancia": "feature_importances_",
+  "clases": {
+    "0": "Riesgo bajo (Good)",
+    "1": "Riesgo medio (Standard)",
+    "2": "Riesgo alto (Poor)"
+  },
+  "mapeo_objetivo": {
+    "Good": 0,
+    "Standard": 1,
+    "Poor": 2
+  },
+  "metricas": {
+    "DecisionTreeClassifier": {
+      "accuracy": 0.6917,
+      "f1_macro": 0.6648,
+      "f1_weighted": 0.6918,
+      "matriz_confusion": [
+        [
+          1776,
+          1087,
+          198
+        ],
+        [
+          1113,
+          6656,
+          1307
+        ],
+        [
+          176,
+          1257,
+          3094
+        ]
+      ]
+    },
+    "KNeighborsClassifier": {
+      "accuracy": 0.6759,
+      "f1_macro": 0.6439,
+      "f1_weighted": 0.6766,
+      "matriz_confusion": [
+        [
+          1734,
+          1230,
+          97
+        ],
+        [
+          1219,
+          6676,
+          1181
+        ],
+        [
+          385,
+          1289,
+          2853
+        ]
+      ]
+    },
+    "SVC(probability=True)": {
+      "accuracy": 0.6872,
+      "f1_macro": 0.6679,
+      "f1_weighted": 0.6918,
+      "matriz_confusion": [
+        [
+          2176,
+          826,
+          59
+        ],
+        [
+          1493,
+          6261,
+          1322
+        ],
+        [
+          573,
+          940,
+          3014
+        ]
+      ]
+    }
+  },
+  "artefactos": {
+    "modelo": "models/modelo_riesgo.joblib",
+    "escalador": "models/scaler.joblib",
+    "codificador": "models/encoder.joblib"
+  }
+}
